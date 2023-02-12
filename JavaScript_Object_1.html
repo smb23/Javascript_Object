@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#1</title>
+</head>
+<body>
+    <p id="car"></p>
+
+<script>
+let x = "";
+const myObj = {
+  name: "Sam",
+  age: 31,
+  car: [
+    {name:"Car Name: MG GT", Specs:"Specs", specs:["Year/Model: 2023", "Engine Type: 1.5-liter turbocharged 4-cylinder engine", "Manufacturer: SAIC Motor","Brand: MG","Country/Origin: United Kingdom"]},
+    
+  ]
+}
+
+for (let i in myObj.car) {
+  x += "<h2>" + myObj.car[i].name + "</h2>";
+  x += "<h3>" + myObj.car[i].Specs + "</h3>";
+  for (let j in myObj.car[i].specs) {
+    x += myObj.car[i].specs[j] + "<br>";
+  }
+}
+
+document.getElementById("car").innerHTML = x;
+</script>
+</body>
+</html>

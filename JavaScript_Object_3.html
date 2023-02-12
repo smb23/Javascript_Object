@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p id="marysmith"></p>
+<p id="nationality"></p>
+<p id="language"></p>
+
+<script>
+
+let x = "";
+const myObj = {
+  name: "Mary Smith",
+  age: 29,
+  student: [
+    {name:"Student", details:["First Name: Mary", "LastName: Smith", "Address: BURKHARDT RD. EVANSVILLE.","Age: 29","email: mary123@yahoo.com"]},
+    
+  ]
+}
+
+for (let i in myObj.student) {
+  x += "<h3>" + myObj.student[i].name + "</h3>";
+  
+  for (let j in myObj.student[i].details) {
+    x += myObj.student[i].details[j] + "<br>";
+  }
+}
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+Person.prototype.nationality = "Filipino";
+Person.prototype.language = "Tagalog";
+
+
+const Student = new Person("Mary", "Smith", 29, "brown");
+document.getElementById("nationality").innerHTML =
+"Nationality: " + Student.nationality;
+
+document.getElementById("language").innerHTML =
+"Language: " + Student.nationality;
+
+
+document.getElementById("marysmith").innerHTML = x;
+</script>
+
+</body>
+</html>
